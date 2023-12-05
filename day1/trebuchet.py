@@ -16,8 +16,8 @@ CONVERTER = {
 
 class Trebuchet:
 
-    def __init__(self, calibration_filename: str, converter_enabled = False) -> None:
-        self.enable_converter = converter_enabled
+    def __init__(self, calibration_filename: str, enable_super = False) -> None:
+        self.super = enable_super
         self.calibration_total = 0
 
         try:
@@ -122,6 +122,6 @@ class Trebuchet:
         Adds all values from the lines to the calibration total.
         """
         for line in self.calibration:
-            self.calibration_total += self._get_converted_numbers(line) if self.enable_converter else self._get_numbers(line)
+            self.calibration_total += self._get_converted_numbers(line) if self.super else self._get_numbers(line)
 
         return self.calibration_total

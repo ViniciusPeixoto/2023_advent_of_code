@@ -3,8 +3,8 @@ from functools import reduce
 
 class Games:
 
-    def __init__(self, filename: str, configuration: dict, power_enabled = False) -> None:
-        self.enable_power = power_enabled
+    def __init__(self, filename: str, configuration: dict, enable_super = False) -> None:
+        self.super = enable_super
         self.config = configuration
 
         with open(filename) as file:

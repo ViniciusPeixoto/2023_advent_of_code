@@ -11,7 +11,7 @@ def main():
     if not os.path.isfile(filename):
         raise ValueError("The last argument must be the filename.")
 
-    trebuchet = Trebuchet(filename, "-c" in sys.argv)
+    trebuchet = Trebuchet(filename, "-p" in sys.argv)
     print(trebuchet.get_calibration_sum())
 
 
